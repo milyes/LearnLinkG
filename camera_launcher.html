@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>NetSecurePro IA Camera Launcher</title>
+  <script>
+    function launchCamera() {
+      const ua = navigator.userAgent.toLowerCase();
+
+      if (ua.includes("samsung")) {
+        window.location.href =
+          "intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.sec.android.app.camera;component=com.sec.android.app.camera/.Camera;end;";
+      } else if (ua.includes("motorola")) {
+        window.location.href =
+          "intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.motorola.camera;component=com.motorola.camera/.Camera;end;";
+      } else {
+        window.location.href = "intent:#Intent;action=android.media.action.IMAGE_CAPTURE;end;";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>📷 Lancement intelligent de la caméra (NetSecurePro IA)</h2>
+  <button onclick="launchCamera()">Ouvrir l'appareil photo</button>
+</body>
+</html>
